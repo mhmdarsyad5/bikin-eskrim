@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ice Cream Maker</title>
+    <link rel="stylesheet" href="eskrim.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Ice Cream Maker 🍨</h1>
+      <h2>
+        by
+        <a href="https://github.com/mhmdarsyad5" target="_blank"
+          >@mhmdarsyad5</a
+        >
+      </h2>
+    </header>
+    <section class="panel">
+      <form>
+        <fieldset>
+          <legend>Flavours</legend>
+          <div class="flavour-option">
+            <input
+              type="checkbox"
+              id="strawberry"
+              name="flavour"
+              value="#ff8197"
+            />
+            <label for="strawberry">Strawberry 🍓</label>
+          </div>
+          <div class="flavour-option">
+            <input
+              type="checkbox"
+              id="vanilla"
+              name="flavour"
+              value="#fff5e6"
+            />
+            <label for="vanilla">Vanilla 🍶</label>
+          </div>
+          <div class="flavour-option">
+            <input
+              type="checkbox"
+              id="chocolate"
+              name="flavour"
+              value="#4a3726"
+            />
+            <label for="chocolate">Chocolate 🍫</label>
+          </div>
+          <div class="flavour-option">
+            <input type="checkbox" id="matcha" name="flavour" value="#88b04b" />
+            <label for="matcha">Matcha 🍵</label>
+          </div>
+          <div class="flavour-option">
+            <input type="checkbox" id="coffee" name="flavour" value="#6f4e37" />
+            <label for="coffee">Coffee ☕</label>
+          </div>
+          <div class="flavour-option">
+            <input
+              type="checkbox"
+              id="blueberry"
+              name="flavour"
+              value="#4f86f7"
+            />
+            <label for="blueberry">Blueberry 🫐</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Extras</legend>
+          <div>
+            <input
+              type="checkbox"
+              id="waferSticks"
+              name="extras"
+              value="waferSticks"
+            />
+            <label for="waferSticks">Wafer Stick Roll</label>
+          </div>
+        </fieldset>
+
+        <button type="button" id="generate" aria-label="Generate scoop">
+          Generate
+        </button>
+      </form>
+    </section>
+    <div id="ice-cream">
+      <div id="scoops"></div>
+      <div class="bowl"></div>
+      <div class="base"></div>
+    </div>
+    <script src="eskrim.js"></script>
+  </body>
+</html>

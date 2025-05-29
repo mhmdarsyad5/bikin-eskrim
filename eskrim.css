@@ -1,0 +1,401 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+:root {
+  --font: "Poppins", serif;
+  --background: #00b7ff;
+  --dark: #000;
+  --light: #fff;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+  background: var(--background);
+  font-family: var(--font);
+  color: var(--dark);
+  font-size: 0.75rem;
+}
+
+#ice-cream {
+  position: relative;
+  width: 350px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+#scoops {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.scoop {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.scoop1 {
+  animation: scoop1-fall 0.8s forwards;
+}
+.scoop2 {
+  animation: scoop-other-fall 1s 0.3s forwards;
+}
+.scoop3 {
+  animation: scoop-other-fall 1s 0.6s forwards;
+}
+.scoop4 {
+  animation: scoop-other-fall 1s 0.9s forwards;
+}
+.scoop5 {
+  animation: scoop-other-fall 1s 1.2s forwards;
+}
+.scoop6 {
+  animation: scoop-other-fall 1s 1.5s forwards;
+}
+
+.bowl {
+  width: 230px;
+  height: 90px;
+  background-color: #d9f0fe;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 170px;
+  border-radius: 0 0 150px 150px;
+  z-index: 1;
+}
+
+.bowl:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 110%;
+  background-color: #afddfa;
+  left: -5%;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.base {
+  height: 40px;
+  width: 20px;
+  background-color: #afddfa;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 140px;
+  z-index: 0;
+}
+
+.base:after {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 120px;
+  background-color: #d9f0fe;
+  left: -50px;
+  top: 30px;
+  border-radius: 50px 50px 0 0;
+}
+
+.panel {
+  background: var(--light);
+  border: 3px solid var(--dark);
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 12px;
+  box-shadow: 5px 5px 0px var(--dark);
+  transform: translate(0);
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 290px;
+  max-height: 100%;
+  width: 100%;
+}
+
+.panel:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px var(--dark);
+}
+
+fieldset {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 3px solid var(--dark);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.3rem;
+  background: var(--light);
+  box-shadow: 3px 3px 0px var(--dark);
+  transition: all 0.2s;
+}
+
+fieldset:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--dark);
+}
+
+legend {
+  text-align: center;
+  padding: 0 0.5rem;
+  font-weight: bold;
+  background: #fff;
+}
+
+form div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+form div:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  accent-color: var(--dark);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+#generate {
+  margin-top: 0.3rem;
+  padding: 0.8rem 1.2rem;
+  border: 3px solid var(--dark);
+  background-color: var(--light);
+  color: var(--dark);
+  font: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0px var(--dark);
+  transform: translate(0);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#generate:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--dark);
+  opacity: 1;
+}
+
+#generate:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--dark);
+}
+
+header {
+  text-align: center;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: var(--dark);
+}
+
+h2 {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+a {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.wafer-stick {
+  position: absolute;
+  width: 25px;
+  height: 180px;
+  background: linear-gradient(
+    45deg,
+    #d4a36f 0%,
+    #e8c496 10%,
+    #d4a36f 20%,
+    #e8c496 30%,
+    #d4a36f 40%,
+    #e8c496 50%,
+    #d4a36f 60%,
+    #e8c496 70%,
+    #d4a36f 80%,
+    #e8c496 90%,
+    #d4a36f 100%
+  );
+  border-radius: 10px;
+  transform: rotate(-30deg);
+  transform-origin: bottom center;
+  z-index: 1;
+  opacity: 0;
+  animation: stick-appear 0.5s ease forwards;
+}
+
+.wafer-stick.right {
+  right: 90px;
+  bottom: 30px;
+  transform: rotate(30deg);
+}
+
+@keyframes stick-appear-right {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px) rotate(30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(30deg);
+  }
+}
+
+@keyframes scoop-other-fall {
+  0% {
+    transform: translateY(-200px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scoop1-fall {
+  0% {
+    transform: translateY(-200px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.flavour-option {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.flavour-option::before {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0.2;
+  transition: all 0.3s;
+}
+
+.flavour-option:hover::before {
+  transform: translateY(-50%) scale(1.2);
+  opacity: 0.3;
+}
+
+#strawberry:checked + label::before,
+#strawberry + label:hover::before {
+  background: #ff8197;
+  box-shadow: -5px 0 15px #ff8197;
+}
+
+#vanilla:checked + label::before,
+#vanilla + label:hover::before {
+  background: #fff5e6;
+  box-shadow: -5px 0 15px #fff5e6;
+}
+
+#chocolate:checked + label::before,
+#chocolate + label:hover::before {
+  background: #4a3726;
+  box-shadow: -5px 0 15px #4a3726;
+}
+
+#matcha:checked + label::before,
+#matcha + label:hover::before {
+  background: #88b04b;
+  box-shadow: -5px 0 15px #88b04b;
+}
+
+#coffee:checked + label::before,
+#coffee + label:hover::before {
+  background: #6f4e37;
+  box-shadow: -5px 0 15px #6f4e37;
+}
+
+#blueberry:checked + label::before,
+#blueberry + label:hover::before {
+  background: #4f86f7;
+  box-shadow: -5px 0 15px #4f86f7;
+}
+
+/* Menambahkan efek sprinkle untuk scoop */
+.scoop::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.3) 1px,
+      transparent 1px
+    ),
+    radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 10px 10px, 15px 15px;
+  background-position: 0 0, 5px 5px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+    min-height: 100vh;
+    scale: 0.9;
+  }
+
+  header {
+    position: relative;
+    transform: none;
+    left: 0;
+    top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .panel {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  #ice-cream {
+    scale: 0.8;
+    margin-top: -50px;
+  }
+}
